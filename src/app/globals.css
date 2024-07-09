@@ -1,0 +1,334 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* General Elements */
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+select{
+  outline: none;
+  outline: none;
+  background-color: white;
+  padding: 5px 30px;
+  border-radius: 7px;
+}
+
+
+
+/* End General Elements */
+.btn-icon {
+  background-color: #e72254;
+}
+
+.btn-animate:hover,
+.btn-animate:focus {
+  box-shadow: inset 15em 0 0 0 #203240;
+}
+
+.polygon {
+  -webkit-clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%);
+  clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%);
+}
+
+
+.plus-shap {
+  animation: circle 7s linear infinite;
+}
+
+@keyframes circle {
+
+  0% {
+    transform:  rotate(0deg) ;
+
+  }
+
+  100% {
+    transform:  rotate(360deg) ;
+
+  }
+
+}
+
+/* General Classes */
+
+.section-btn {
+  @apply btn-animate bg-primary-500 duration-700 uppercase tracking-wide lg:font-bold text-white-300;
+}
+
+.bg-video {
+  background-image: url('../../public/assets/bg-video.jpg');
+  width: 100%;
+  height: 80vb;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.bg-footer {
+  background-image: url('../../public/assets/footer-bg.jpg');
+  width: 100%;
+  height: 70vb;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media (max-width:768px) {
+  .bg-footer {
+    height: 180vb;
+
+  }
+}
+
+
+.teamContent::after {
+  position: absolute;
+  content: "";
+  top: 20%;
+  left: -20px;
+  -webkit-clip-path: polygon(0 0, 100% 43%, 0% 100%);
+  clip-path: polygon(0 0, 50% 43%, 0% 90%);
+  background: #203240;
+  width: 150px;
+  height: 189px;
+  z-index: -1;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+.teamContent::before {
+  position: absolute;
+  content: "";
+  top: 30%;
+  right: -18px;
+  -webkit-clip-path: polygon(0 0, 100% 43%, 0% 100%);
+  clip-path: polygon(0 0, 100% 90%, 100% 38%);
+  background: #e72254;
+  width: 150px;
+  height: 189px;
+  z-index: -1;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+.btn-video::before {
+  content: '';
+  background-color: aliceblue;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 65%;
+  height: 65%;
+  z-index: -1;
+  animation: borderAnimated 2.5s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes borderAnimated {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.open {
+  transform: translateX(300px);
+  z-index: 9999;
+}
+
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  padding-bottom: 40%;
+  /* background-color: #000; */
+  cursor: pointer;
+}
+
+.poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.overalayPoster {
+  position: absolute;
+  /* background-color: rgb(213, 191, 191); */
+  opacity: 0.9;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  z-index: 999;
+}
+
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 300px;
+  border: 0;
+  z-index: 0;
+  border-radius: 15px;
+
+}
+
+
+.social-links-fixed ul {
+  position: fixed;
+  right: 30px;
+  bottom: 100px;
+  justify-content: space-between;
+  z-index: 99999;
+  background-color: transparent;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 50px;
+  height: fit-content;
+  transition: all 0.5s ease 0s;
+  background-color: transparent;
+}
+
+
+.social-links-fixed ul li {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 50px;
+  transition: all 0.5s ease 0s;
+}
+
+.social-links-fixed ul li.instagam {
+  background-color: #833AB4;
+}
+
+.social-links-fixed ul li.linkedin {
+  background-color: #0077B5;
+}
+
+.social-links-fixed ul li.twitter {
+  background-color: rgb(29, 161, 242);
+  margin-bottom: 10px;
+}
+
+.social-links-fixed ul li.facebook {
+  background: linear-gradient(155deg, rgb(0, 39, 85), rgb(0, 159, 255));
+}
+
+.social-links-fixed ul li.pinterest {
+  background-color: rgb(41, 128, 211);
+}
+
+.social-links-fixed ul li.instagram {
+  background: linear-gradient(45deg, rgb(240, 148, 51) 0%, rgb(230, 104, 60) 25%, rgb(220, 39, 67) 50%, rgb(204, 35, 102) 75%, rgb(188, 24, 136) 100%);
+}
+
+.social-links-fixed ul li.whatsapp {
+  background: linear-gradient(45deg, rgb(45, 182, 64), rgb(80, 203, 94));
+  margin-bottom: 10px;
+}
+
+.social-links-fixed ul li a {
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.social-links-fixed li {
+  transform: scale(0);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.social-links-fixed ul {
+  height: auto;
+  box-shadow: none;
+}
+
+.social-links-fixed li.support {
+  transform: scale(1) translatey(55px);
+  visibility: visible;
+  opacity: 1;
+  background-color: var(--color-primary);
+  transition: all 0.5s ease 0s;
+}
+
+.social-links-fixed.open li.support {
+  transform: scale(1) translateY(0px);
+  background-color: rgb(242, 104, 51);
+}
+
+.social-links-fixed.open li.support span {
+  transform: rotateY(180deg);
+}
+
+.social-links-fixed li span {
+  transition: all 0.5s ease 0s;
+}
+
+.social-links-fixed.open li {
+  transform: scale(1);
+  visibility: visible;
+  opacity: 1;
+}
+
+.social-links-fixed.open ul {
+  box-shadow: rgba(0, 0, 0, 0.34) 0px 1px 20px 0px;
+  background-color: white;
+}
